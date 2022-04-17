@@ -1,0 +1,13 @@
+ignore.txt
+_readme.txt
+*.docx
+*.doc
+*.rtf
+*.ppt
+*.pptx
+*.jpg
+*.exe
+*.ico
+*.cometr
+*.cometu
+*.comet*

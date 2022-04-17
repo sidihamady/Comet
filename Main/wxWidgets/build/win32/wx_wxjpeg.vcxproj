@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release DLL|Win32">
+      <Configuration>Release DLL</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>wxjpeg</ProjectName>
+    <SccProjectName />
+    <SccLocalPath />
+    <ProjectGuid>{CCD7E001-9284-4031-8F2F-7324B09D53D7}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'">
+    <OutDir>..\..\..\..\output\Windows32\lib\wx\</OutDir>
+    <IntDir>..\..\..\..\output\Windows32\obj\wx\wxjpeg\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>wxjpeg</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>Full</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>$(OutDir)mswu;..\..\include;..\..\src\tiff;..\..\src\jpeg;..\..\src\png;..\..\src\zlib;..\..\src\regex;..\..\src\expat\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>$(IntDir)wx_wxjpeg.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)wxjpeg.pdb</ProgramDataBaseFileName>
+      <AdditionalOptions>
+      </AdditionalOptions>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <OmitFramePointers>false</OmitFramePointers>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MinimalRebuild>true</MinimalRebuild>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>$(IntDir)wx_wxjpeg.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <TargetMachine>MachineX86</TargetMachine>
+      <SubSystem>Console</SubSystem>
+    </Lib>
+    <Link>
+      <AdditionalLibraryDirectories>$(OutDir)lib32/wx;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>$(OutDir)lib32/wx/$(TargetName).lib</ImportLibrary>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <Xdcmake>
+      <OutputFile>$(IntDir)$(TargetName).xml</OutputFile>
+    </Xdcmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\jpeg\jcapimin.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jcapistd.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jccoefct.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jccolor.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jcdctmgr.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jchuff.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jcinit.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jcmainct.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jcmarker.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jcmaster.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jcomapi.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jcparam.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jcphuff.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jcprepct.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jcsample.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jctrans.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jdapimin.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jdapistd.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jdatadst.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jdatasrc.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jdcoefct.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jdcolor.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jddctmgr.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jdhuff.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jdinput.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jdmainct.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jdmarker.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jdmaster.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jdmerge.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jdphuff.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jdpostct.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jdsample.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jdtrans.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jerror.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jfdctflt.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jfdctfst.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jfdctint.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jidctflt.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jidctfst.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jidctint.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jidctred.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jmemmgr.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jmemnobs.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jquant1.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jquant2.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jpeg\jutils.c">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="wx.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

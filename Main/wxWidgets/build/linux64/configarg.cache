@@ -1,0 +1,3 @@
+wxUSE_MONOLITHIC=no
+wxUSE_SHARED=yes
+wxUSE_DEBUG=no

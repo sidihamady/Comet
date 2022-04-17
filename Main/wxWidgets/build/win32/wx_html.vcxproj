@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release DLL|Win32">
+      <Configuration>Release DLL</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>html</ProjectName>
+    <SccProjectName />
+    <SccLocalPath />
+    <ProjectGuid>{1CA3D7C1-86F2-4E24-A7FD-71FA9C0CA6F4}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'">
+    <OutDir>..\..\..\..\output\Windows32\bin\</OutDir>
+    <IntDir>..\..\..\..\output\Windows32\obj\wx\html\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>wxhtml</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>Full</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level4</WarningLevel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>$(OutDir)lib\wx\mswu;..\..\include;..\..\src\tiff;..\..\src\jpeg;..\..\src\png;..\..\src\zlib;..\..\src\regex;..\..\src\expat\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_USRDLL;DLL_EXPORTS;__WXMSW__;NDEBUG;WXBUILDING;WXUSINGDLL;WXMAKINGDLL_HTML;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>$(IntDir)wxprec_htmllib.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>wx/wxprec.h</PrecompiledHeaderFile>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)wxmsw28u_html.pdb</ProgramDataBaseFileName>
+      <AdditionalOptions>
+      </AdditionalOptions>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <OmitFramePointers>false</OmitFramePointers>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MinimalRebuild>true</MinimalRebuild>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>__WXMSW__;NDEBUG;_UNICODE;WXBUILDING;WXDLLNAME=wxhtml;WXUSINGDLL;WXMAKINGDLL_HTML;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(OutDir)lib\wx\mswu;..\..\include;..\..\src\tiff;..\..\src\jpeg;..\..\src\png;..\..\src\zlib;..\..\src\regex;..\..\src\expat\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>$(IntDir)wx_html.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>$(OutDir)wxmsw28u_html.lib</OutputFile>
+    </Lib>
+    <Link>
+      <AdditionalLibraryDirectories>$(OutDir)lib32/wx;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>$(OutDir)lib32/wx/$(TargetName).lib</ImportLibrary>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>wxtiff.lib;wxjpeg.lib;wxpng.lib;wxzlib.lib;winmm.lib;comctl32.lib;rpcrt4.lib;wsock32.lib;odbc32.lib;wxcore.lib;wxbase.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <Xdcmake>
+      <OutputFile>$(IntDir)$(TargetName).xml</OutputFile>
+    </Xdcmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\common\dummy.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'">wx/wxprec.h</PrecompiledHeaderFile>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\msw\helpbest.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\generic\htmllbox.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\html\helpctrl.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\html\helpdata.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\html\helpdlg.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\html\helpfrm.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\html\helpwnd.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\html\htmlcell.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\html\htmlfilt.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\html\htmlpars.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\html\htmltag.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\html\htmlwin.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\html\htmprint.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\html\m_dflist.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\html\m_fonts.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\html\m_hline.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\html\m_image.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\html\m_layout.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\html\m_links.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\html\m_list.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\html\m_pre.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\html\m_style.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\html\m_tables.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\html\winpars.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\src\msw\version.rc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'">..\..\src\msw;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <ResourceCompile Include="wx.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\include\wx\msw\setup.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'">copy "%(FullPath)" $(OutDir)..\lib\wx\mswu\wx\setup.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'">Creating $(OutDir)..\lib\wx\mswu\wx\setup.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'">$(OutDir)..\lib\wx\mswu\wx\setup.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\include\wx\msw\genrcdefs.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'">cl /EP /nologo "%(FullPath)" &gt; "$(OutDir)..\lib\wx\mswu\wx\msw\rcdefs.h"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'">Creating $(OutDir)..\lib\wx\mswu\wx\msw\rcdefs.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'">$(OutDir)..\lib\wx\mswu\wx\msw\rcdefs.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\..\include\wx\msw\helpbest.h" />
+    <ClInclude Include="..\..\include\wx\html\helpctrl.h" />
+    <ClInclude Include="..\..\include\wx\html\helpdata.h" />
+    <ClInclude Include="..\..\include\wx\html\helpdlg.h" />
+    <ClInclude Include="..\..\include\wx\html\helpfrm.h" />
+    <ClInclude Include="..\..\include\wx\html\helpwnd.h" />
+    <ClInclude Include="..\..\include\wx\html\htmlcell.h" />
+    <ClInclude Include="..\..\include\wx\html\htmldefs.h" />
+    <ClInclude Include="..\..\include\wx\html\htmlfilt.h" />
+    <ClInclude Include="..\..\include\wx\html\htmlpars.h" />
+    <ClInclude Include="..\..\include\wx\html\htmlproc.h" />
+    <ClInclude Include="..\..\include\wx\html\htmltag.h" />
+    <ClInclude Include="..\..\include\wx\html\htmlwin.h" />
+    <ClInclude Include="..\..\include\wx\html\htmprint.h" />
+    <ClInclude Include="..\..\include\wx\html\m_templ.h" />
+    <ClInclude Include="..\..\include\wx\html\winpars.h" />
+    <ClInclude Include="..\..\include\wx\htmllbox.h" />
+    <ClInclude Include="..\..\include\wx\wxhtml.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

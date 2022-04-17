@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release DLL|x64">
+      <Configuration>Release DLL</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{AF10C9BE-2ACC-46C2-AF10-0E4D419987DF}</ProjectGuid>
+    <RootNamespace>Comet64</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.51106.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'">
+    <OutDir>../../../../output/Windows64/bin/</OutDir>
+    <IntDir>../../../../output/Windows64/obj/Comet/</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>comet</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>false</OmitFramePointers>
+      <AdditionalIncludeDirectories>..\..\include;$(OutDir)..\lib\wx\mswu;..\..\..\wxWidgets\include;..\..\..\wxWidgets\contrib\include;..\..\..\wxWidgets\wxsqlite\include;..\..\..\wxWidgets\contrib\src\stc\scintilla\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_UNICODE;UNICODE;__WXMSW__;WXUSINGDLL;WXUSINGDLL_STC;WXUSINGDLL_ADV;WXUSINGDLL_WXSQLITE3;SIGMA_BUILD_AS_DLL;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_CRT_NON_CONFORMING_SWPRINTFS;LUA_BUILD_AS_DLL;LUA_COMPAT_MODULE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <ProgramDataBaseFileName>
+      </ProgramDataBaseFileName>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>wxstc.lib;wxadv.lib;wxaui.lib;wxcore.lib;wxbase.lib;kernel32.lib;user32.lib;gdi32.lib;comdlg32.lib;winspool.lib;winmm.lib;shell32.lib;comctl32.lib;ole32.lib;oleaut32.lib;uuid.lib;rpcrt4.lib;advapi32.lib;wininet.lib;gdiplus.lib;file.lib;luacore.lib;luaext.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>$(OutDir)../lib;$(OutDir)../lib/wx;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX64</TargetMachine>
+      <ProgramDatabaseFile>
+      </ProgramDatabaseFile>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <EnableUAC>true</EnableUAC>
+      <LinkErrorReporting>NoErrorReport</LinkErrorReporting>
+    </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>..\..\include;$(OutDir)mswu;..\..\..\wxWidgets\include</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Image Include="..\..\etc\comet.ico" />
+    <Image Include="..\..\etc\lua.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Comet64.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\BookmarkList.cpp" />
+    <ClCompile Include="..\..\src\CodeAnalyzer.cpp" />
+    <ClCompile Include="..\..\src\CodeEdit.cpp" />
+    <ClCompile Include="..\..\src\CodeEditSyntax.cpp" />
+    <ClCompile Include="..\..\src\ColorButton.cpp" />
+    <ClCompile Include="..\..\src\ColorsDlg.cpp" />
+    <ClCompile Include="..\..\src\ConsoleEdit.cpp" />
+    <ClCompile Include="..\..\src\FindDirDlg.cpp" />
+    <ClCompile Include="..\..\src\FindFileDlg.cpp" />
+    <ClCompile Include="..\..\src\FindThread.cpp" />
+    <ClCompile Include="..\..\src\interact\hook.cpp" />
+    <ClCompile Include="..\..\src\interact\print.cpp" />
+    <ClCompile Include="..\..\src\LexerConfig.cpp" />
+    <ClCompile Include="..\..\src\LexerDlg.cpp" />
+    <ClCompile Include="..\..\src\OutputEdit.cpp" />
+    <ClCompile Include="..\..\src\EditorConfig.cpp" />
+    <ClCompile Include="..\..\src\ScriptStats.cpp" />
+    <ClCompile Include="..\..\src\ScriptEdit.cpp" />
+    <ClCompile Include="..\..\src\ScriptEditEncoding.cpp" />
+    <ClCompile Include="..\..\src\ScriptEditFile.cpp" />
+    <ClCompile Include="..\..\src\ScriptEditFind.cpp" />
+    <ClCompile Include="..\..\src\ScriptEditMarker.cpp" />
+    <ClCompile Include="..\..\src\ScriptEditProcess.cpp" />
+    <ClCompile Include="..\..\src\ScriptPrint.cpp" />
+    <ClCompile Include="..\..\src\ScriptSamples.cpp" />
+    <ClCompile Include="..\..\src\CometApp.cpp" />
+    <ClCompile Include="..\..\src\CometComboBox.cpp" />
+    <ClCompile Include="..\..\src\CometConfig.cpp" />
+    <ClCompile Include="..\..\src\CometFileExplorer.cpp" />
+    <ClCompile Include="..\..\src\CometFrame.cpp" />
+    <ClCompile Include="..\..\src\CometFrameAnalyzer.cpp" />
+    <ClCompile Include="..\..\src\CometFrameBookmark.cpp" />
+    <ClCompile Include="..\..\src\CometFrameFile.cpp" />
+    <ClCompile Include="..\..\src\CometFrameFind.cpp" />
+    <ClCompile Include="..\..\src\CometFrameInit.cpp" />
+    <ClCompile Include="..\..\src\CometFrameUpdate.cpp" />
+    <ClCompile Include="..\..\src\ScriptThread.cpp" />
+    <ClCompile Include="..\..\src\ConsoleThread.cpp" />
+    <ClCompile Include="..\..\src\CometProcess.cpp" />
+    <ClCompile Include="..\..\src\TabDlg.cpp" />
+    <ClCompile Include="..\..\src\ToolsDlg.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\CodeEdit.h" />
+    <ClInclude Include="..\..\include\LexerConfig.h" />
+    <ClInclude Include="..\..\include\LexerDlg.h" />
+    <ClInclude Include="..\..\include\CometComboBox.h" />
+    <ClInclude Include="..\..\include\BookmarkList.h" />
+    <ClInclude Include="..\..\include\CodeAnalyzer.h" />
+    <ClInclude Include="..\..\include\ColorButton.h" />
+    <ClInclude Include="..\..\include\ColorsDlg.h" />
+    <ClInclude Include="..\..\include\ConsoleEdit.h" />
+    <ClInclude Include="..\..\include\FindDirDlg.h" />
+    <ClInclude Include="..\..\include\FindFileDlg.h" />
+    <ClInclude Include="..\..\include\FindThread.h" />
+    <ClInclude Include="..\..\include\Identifiers.h" />
+    <ClInclude Include="..\..\include\OutputEdit.h" />
+    <ClInclude Include="..\..\include\EditorConfig.h" />
+    <ClInclude Include="..\..\include\resource.h" />
+    <ClInclude Include="..\..\include\ScriptEdit.h" />
+    <ClInclude Include="..\..\include\ScriptPrint.h" />
+    <ClInclude Include="..\..\include\CometApp.h" />
+    <ClInclude Include="..\..\include\CometConfig.h" />
+    <ClInclude Include="..\..\include\CometFileExplorer.h" />
+    <ClInclude Include="..\..\include\CometFrame.h" />
+    <ClInclude Include="..\..\include\ScriptThread.h" />
+    <ClInclude Include="..\..\include\ConsoleThread.h" />
+    <ClInclude Include="..\..\include\CometProcess.h" />
+    <ClInclude Include="..\..\include\TabDlg.h" />
+    <ClInclude Include="..\..\include\ToolsDlg.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

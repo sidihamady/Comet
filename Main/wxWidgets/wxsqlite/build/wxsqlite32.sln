@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 12.0.30110.0
+
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wxsqlite", "wxsqlite.vcxproj", "{2379401F-BB04-4278-A256-90431D6911EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release DLL|Win32 = Release DLL|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2379401F-BB04-4278-A256-90431D6911EF}.Release DLL|Win32.ActiveCfg = Release DLL|Win32
+		{2379401F-BB04-4278-A256-90431D6911EF}.Release DLL|Win32.Build.0 = Release DLL|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

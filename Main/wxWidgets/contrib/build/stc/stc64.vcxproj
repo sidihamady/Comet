@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release DLL|x64">
+      <Configuration>Release DLL</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\stc\PlatWX.cpp" />
+    <ClCompile Include="..\..\src\stc\ScintillaWX.cpp" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\AutoComplete.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\CallTip.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\CellBuffer.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\CharClassify.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\ContractionState.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\Document.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\DocumentAccessor.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\Editor.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\ExternalLexer.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\Indicator.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\KeyMap.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\KeyWords.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\LexBash.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\LexBatch.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\LexSolis.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\LexCPP.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\LexFortran.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\LexLaTeX.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\LexLua.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\LexMake.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\LexMatlab.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\LexPython.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\LexComet.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\LineMarker.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\PropSet.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\RESearch.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\ScintillaBase.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\Style.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\StyleContext.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\UniConversion.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\ViewStyle.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\WindowAccessor.cxx" />
+    <ClCompile Include="..\..\src\stc\scintilla\src\XPM.cxx" />
+    <ClCompile Include="..\..\src\stc\stc.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="stc64.rc" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName />
+    <SccLocalPath />
+    <ProjectGuid>{77889DF1-3433-4388-B152-ED6B6BE0207E}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'">
+    <OutDir>../../../../../output/Windows64/bin/</OutDir>
+    <IntDir>../../../../../output/Windows64/obj/wx/wxstc/</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>wxstc</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>Full</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level4</WarningLevel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>..\..\src\stc\..\..\..\include;..\..\src\stc\..\..\include;..\..\src\stc\scintilla\include;..\..\src\stc\scintilla\src;$(OutDir)..\lib\wx\mswu;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WIN64;WIN32;_USRDLL;DLL_EXPORTS;__WXMSW__;NDEBUG;WXBUILDING;WXUSINGDLL;WXMAKINGDLL_STC;__WX__;SCI_LEXER;LINK_LEXERS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>
+      </ProgramDataBaseFileName>
+      <AdditionalOptions> /EHsc </AdditionalOptions>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>false</OmitFramePointers>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <DebugInformationFormat>None</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>$(IntDir)stc.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>$(OutDir)bin\$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+    <Link>
+      <AdditionalDependencies>wxtiff.lib;wxjpeg.lib;wxpng.lib;wxzlib.lib;wxregex.lib;winmm.lib;comctl32.lib;rpcrt4.lib;wsock32.lib;gdiplus.lib;odbc32.lib;wxbase.lib;wxcore.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImportLibrary>$(OutDir)../lib/wx/$(TargetName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>$(OutDir)../lib/wx</AdditionalLibraryDirectories>
+      <SubSystem>Console</SubSystem>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+      <ProgramDatabaseFile />
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Link>
+    <Xdcmake>
+      <OutputFile>$(IntDir)$(TargetName).xml</OutputFile>
+    </Xdcmake>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

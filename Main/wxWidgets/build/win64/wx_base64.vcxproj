@@ -1,0 +1,519 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release DLL|x64">
+      <Configuration>Release DLL</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>base64</ProjectName>
+    <SccProjectName />
+    <SccLocalPath />
+    <ProjectGuid>{99986982-F1DB-450A-AF97-8C91279999DA}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'">
+    <OutDir>..\..\..\..\output\Windows64\bin\</OutDir>
+    <IntDir>..\..\..\..\output\Windows64\obj\wx\base\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>wxbase</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>Full</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level4</WarningLevel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalIncludeDirectories>$(OutDir)..\lib\wx\mswu;..\..\include;..\..\src\tiff;..\..\src\jpeg;..\..\src\png;..\..\src\zlib;..\..\src\regex;..\..\src\expat\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WIN64;WIN32;_USRDLL;DLL_EXPORTS;__WXMSW__;NDEBUG;WXBUILDING;wxUSE_GUI=0;WXMAKINGDLL_BASE;wxUSE_BASE=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>$(IntDir)wxprec_baselib64.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderFile>wx/wxprec.h</PrecompiledHeaderFile>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)wxbase28u64.pdb</ProgramDataBaseFileName>
+      <AdditionalOptions>
+      </AdditionalOptions>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <OmitFramePointers>false</OmitFramePointers>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MinimalRebuild>true</MinimalRebuild>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+    </ClCompile>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>__WXMSW__;NDEBUG;_UNICODE;WXBUILDING;WXDLLNAME=wxbase;wxUSE_GUI=0;WXMAKINGDLL_BASE;wxUSE_BASE=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(OutDir)lib64\wx\mswu;..\..\include;..\..\src\tiff;..\..\src\jpeg;..\..\src\png;..\..\src\zlib;..\..\src\regex;..\..\src\expat\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>$(IntDir)wx_base.bsc</OutputFile>
+    </Bscmake>
+    <Lib>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>$(OutDir)wxbase64.lib</OutputFile>
+    </Lib>
+    <Link>
+      <AdditionalLibraryDirectories>$(OutDir)../lib/wx;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>$(OutDir)../lib/wx/$(TargetName).lib</ImportLibrary>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>wxzlib.lib;winmm.lib;comctl32.lib;rpcrt4.lib;wsock32.lib;odbc32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+      <ProgramDatabaseFile />
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Link>
+    <Xdcmake>
+      <OutputFile>$(IntDir)$(TargetName).xml</OutputFile>
+    </Xdcmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\common\appbase.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\arcall.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\arcfind.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\archive.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\clntdata.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\cmdline.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\config.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\convauto.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\datetime.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\datstrm.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\dircmn.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\dummy.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'">wx/wxprec.h</PrecompiledHeaderFile>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\dynarray.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\dynlib.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\dynload.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\encconv.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\event.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\extended.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'">
+      </PrecompiledHeader>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\ffile.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\file.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\fileback.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\fileconf.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\filefn.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\filename.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\filesys.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\filtall.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\filtfind.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\fmapbase.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\fs_arc.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\fs_filter.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\fs_mem.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\hash.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\hashmap.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\init.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\intl.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\ipcbase.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\list.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\log.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\longlong.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\memory.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\mimecmn.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\module.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\msgout.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\mstream.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\object.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\platinfo.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\powercmn.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\process.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\regex.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\sstream.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\stdpbase.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\stopwatch.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\strconv.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\stream.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\string.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\sysopt.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\tarstrm.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\textbuf.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\textfile.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\tokenzr.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\txtstrm.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\uri.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\utilscmn.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\variant.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\wfstream.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\wxchar.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\xti.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\xtistrm.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\zipstrm.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\common\zstream.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\msw\basemsw.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\msw\crashrpt.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\msw\dde.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\msw\debughlp.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\msw\dir.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\msw\dlmsw.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\msw\main.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\msw\mimetype.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\msw\mslu.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\msw\power.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\msw\regconf.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\msw\registry.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\msw\snglinst.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\msw\stackwalk.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\msw\stdpaths.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\msw\thread.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\msw\utils.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\msw\utilsexc.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="..\..\src\msw\volume.cpp">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'"> /EHsc   /EHsc </AdditionalOptions>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\src\msw\version.rc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'">..\..\src\msw;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <ResourceCompile Include="wx64.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\include\wx\msw\setup.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'">copy "%(FullPath)" $(OutDir)..\lib\wx\mswu\wx\setup.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'">Creating $(OutDir)..\lib\wx\mswu\wx\setup.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'">$(OutDir)..\lib\wx\mswu\wx\setup.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\..\include\wx\msw\apptbase.h" />
+    <ClInclude Include="..\..\include\wx\msw\apptrait.h" />
+    <ClInclude Include="..\..\include\wx\msw\chkconf.h" />
+    <ClInclude Include="..\..\include\wx\msw\crashrpt.h" />
+    <ClInclude Include="..\..\include\wx\msw\dde.h" />
+    <ClInclude Include="..\..\include\wx\msw\debughlp.h" />
+    <ClInclude Include="..\..\include\wx\msw\gccpriv.h" />
+    <CustomBuild Include="..\..\include\wx\msw\genrcdefs.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'">cl /EP /nologo "%(FullPath)" &gt; "$(OutDir)..\lib\wx\mswu\wx\msw\rcdefs.h"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'">Creating $(OutDir)..\lib\wx\mswu\wx\msw\rcdefs.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'">$(OutDir)..\lib\wx\mswu\wx\msw\rcdefs.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\..\include\wx\msw\libraries.h" />
+    <ClInclude Include="..\..\include\wx\msw\mimetype.h" />
+    <ClInclude Include="..\..\include\wx\msw\mslu.h" />
+    <ClInclude Include="..\..\include\wx\msw\private.h" />
+    <ClInclude Include="..\..\include\wx\msw\regconf.h" />
+    <ClInclude Include="..\..\include\wx\msw\registry.h" />
+    <ClInclude Include="..\..\include\wx\msw\seh.h" />
+    <ClInclude Include="..\..\include\wx\msw\stackwalk.h" />
+    <ClInclude Include="..\..\include\wx\msw\stdpaths.h" />
+    <ClInclude Include="..\..\include\wx\msw\winundef.h" />
+    <ClInclude Include="..\..\include\wx\msw\wrapcctl.h" />
+    <ClInclude Include="..\..\include\wx\msw\wrapcdlg.h" />
+    <ClInclude Include="..\..\include\wx\msw\wrapwin.h" />
+    <ClInclude Include="..\..\include\wx\html\forcelnk.h" />
+    <ClInclude Include="..\..\include\wx\afterstd.h" />
+    <ClInclude Include="..\..\include\wx\app.h" />
+    <ClInclude Include="..\..\include\wx\apptrait.h" />
+    <ClInclude Include="..\..\include\wx\archive.h" />
+    <ClInclude Include="..\..\include\wx\arrstr.h" />
+    <ClInclude Include="..\..\include\wx\beforestd.h" />
+    <ClInclude Include="..\..\include\wx\buffer.h" />
+    <ClInclude Include="..\..\include\wx\build.h" />
+    <ClInclude Include="..\..\include\wx\chkconf.h" />
+    <ClInclude Include="..\..\include\wx\clntdata.h" />
+    <ClInclude Include="..\..\include\wx\cmdline.h" />
+    <ClInclude Include="..\..\include\wx\confbase.h" />
+    <ClInclude Include="..\..\include\wx\config.h" />
+    <ClInclude Include="..\..\include\wx\containr.h" />
+    <ClInclude Include="..\..\include\wx\convauto.h" />
+    <ClInclude Include="..\..\include\wx\cpp.h" />
+    <ClInclude Include="..\..\include\wx\datetime.h" />
+    <ClInclude Include="..\..\include\wx\datstrm.h" />
+    <ClInclude Include="..\..\include\wx\dde.h" />
+    <ClInclude Include="..\..\include\wx\debug.h" />
+    <ClInclude Include="..\..\include\wx\defs.h" />
+    <ClInclude Include="..\..\include\wx\dir.h" />
+    <ClInclude Include="..\..\include\wx\dlimpexp.h" />
+    <ClInclude Include="..\..\include\wx\dynarray.h" />
+    <ClInclude Include="..\..\include\wx\dynlib.h" />
+    <ClInclude Include="..\..\include\wx\dynload.h" />
+    <ClInclude Include="..\..\include\wx\encconv.h" />
+    <ClInclude Include="..\..\include\wx\event.h" />
+    <ClInclude Include="..\..\include\wx\except.h" />
+    <ClInclude Include="..\..\include\wx\features.h" />
+    <ClInclude Include="..\..\include\wx\ffile.h" />
+    <ClInclude Include="..\..\include\wx\file.h" />
+    <ClInclude Include="..\..\include\wx\fileconf.h" />
+    <ClInclude Include="..\..\include\wx\filefn.h" />
+    <ClInclude Include="..\..\include\wx\filename.h" />
+    <ClInclude Include="..\..\include\wx\filesys.h" />
+    <ClInclude Include="..\..\include\wx\fontenc.h" />
+    <ClInclude Include="..\..\include\wx\fontmap.h" />
+    <ClInclude Include="..\..\include\wx\fs_arc.h" />
+    <ClInclude Include="..\..\include\wx\fs_filter.h" />
+    <ClInclude Include="..\..\include\wx\fs_mem.h" />
+    <ClInclude Include="..\..\include\wx\fs_zip.h" />
+    <ClInclude Include="..\..\include\wx\hash.h" />
+    <ClInclude Include="..\..\include\wx\hashmap.h" />
+    <ClInclude Include="..\..\include\wx\hashset.h" />
+    <ClInclude Include="..\..\include\wx\iconloc.h" />
+    <ClInclude Include="..\..\include\wx\init.h" />
+    <ClInclude Include="..\..\include\wx\intl.h" />
+    <ClInclude Include="..\..\include\wx\iosfwrap.h" />
+    <ClInclude Include="..\..\include\wx\ioswrap.h" />
+    <ClInclude Include="..\..\include\wx\ipc.h" />
+    <ClInclude Include="..\..\include\wx\ipcbase.h" />
+    <ClInclude Include="..\..\include\wx\isql.h" />
+    <ClInclude Include="..\..\include\wx\isqlext.h" />
+    <ClInclude Include="..\..\include\wx\link.h" />
+    <ClInclude Include="..\..\include\wx\list.h" />
+    <ClInclude Include="..\..\include\wx\log.h" />
+    <ClInclude Include="..\..\include\wx\longlong.h" />
+    <ClInclude Include="..\..\include\wx\math.h" />
+    <ClInclude Include="..\..\include\wx\memconf.h" />
+    <ClInclude Include="..\..\include\wx\memory.h" />
+    <ClInclude Include="..\..\include\wx\memtext.h" />
+    <ClInclude Include="..\..\include\wx\mimetype.h" />
+    <ClInclude Include="..\..\include\wx\module.h" />
+    <ClInclude Include="..\..\include\wx\msgout.h" />
+    <ClInclude Include="..\..\include\wx\mstream.h" />
+    <ClInclude Include="..\..\include\wx\object.h" />
+    <ClInclude Include="..\..\include\wx\platform.h" />
+    <ClInclude Include="..\..\include\wx\platinfo.h" />
+    <ClInclude Include="..\..\include\wx\power.h" />
+    <ClInclude Include="..\..\include\wx\process.h" />
+    <ClInclude Include="..\..\include\wx\ptr_scpd.h" />
+    <ClInclude Include="..\..\include\wx\recguard.h" />
+    <ClInclude Include="..\..\include\wx\regex.h" />
+    <ClInclude Include="..\..\include\wx\scopeguard.h" />
+    <ClInclude Include="..\..\include\wx\snglinst.h" />
+    <ClInclude Include="..\..\include\wx\sstream.h" />
+    <ClInclude Include="..\..\include\wx\stack.h" />
+    <ClInclude Include="..\..\include\wx\stackwalk.h" />
+    <ClInclude Include="..\..\include\wx\stdpaths.h" />
+    <ClInclude Include="..\..\include\wx\stockitem.h" />
+    <ClInclude Include="..\..\include\wx\stopwatch.h" />
+    <ClInclude Include="..\..\include\wx\strconv.h" />
+    <ClInclude Include="..\..\include\wx\stream.h" />
+    <ClInclude Include="..\..\include\wx\string.h" />
+    <ClInclude Include="..\..\include\wx\sysopt.h" />
+    <ClInclude Include="..\..\include\wx\tarstrm.h" />
+    <ClInclude Include="..\..\include\wx\textbuf.h" />
+    <ClInclude Include="..\..\include\wx\textfile.h" />
+    <ClInclude Include="..\..\include\wx\thread.h" />
+    <ClInclude Include="..\..\include\wx\timer.h" />
+    <ClInclude Include="..\..\include\wx\tokenzr.h" />
+    <ClInclude Include="..\..\include\wx\txtstrm.h" />
+    <ClInclude Include="..\..\include\wx\types.h" />
+    <ClInclude Include="..\..\include\wx\uri.h" />
+    <ClInclude Include="..\..\include\wx\utils.h" />
+    <ClInclude Include="..\..\include\wx\variant.h" />
+    <ClInclude Include="..\..\include\wx\vector.h" />
+    <ClInclude Include="..\..\include\wx\version.h" />
+    <ClInclude Include="..\..\include\wx\volume.h" />
+    <ClInclude Include="..\..\include\wx\wfstream.h" />
+    <ClInclude Include="..\..\include\wx\wx.h" />
+    <ClInclude Include="..\..\include\wx\wxchar.h" />
+    <ClInclude Include="..\..\include\wx\wxprec.h" />
+    <ClInclude Include="..\..\include\wx\xti.h" />
+    <ClInclude Include="..\..\include\wx\xtistrm.h" />
+    <ClInclude Include="..\..\include\wx\zipstrm.h" />
+    <ClInclude Include="..\..\include\wx\zstream.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

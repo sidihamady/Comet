@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open  
+
+[Desktop Entry]
+Name=Comet
+Comment=Programming Environment for Lua
+Keywords=comet;
+Exec=../bin/comet %F
+StartupNotify=true
+Terminal=false
+Type=Application
+Icon=./comet.png

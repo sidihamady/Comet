@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Comet: Programming Environment for Lua.md</title>
+    <style></style>
+</head>
+
+<body>
+    <h1>
+        <a id="Comet_Programming_Environment_for_Lua_0"></a>Comet: Programming Environment for Lua
+    </h1>
+    <p>(C) 2010-2022 Pr. Sidi HAMADY<br />
+        <a href="http://www.hamady.org">http://www.hamady.org</a>
+    </p>
+    <p> Released under the MIT licence (https://opensource.org/licenses/MIT) <br />
+        See Copyright Notice in COPYRIGHT
+    </p>
+    <p>Comet is a programming environment for the Lua
+        scripting language.<br />
+        It is available for Android, Linux and Windows with built-in Lua scripting engine, full-featured editor with
+        syntax highlighting, code completion, inline documentation, script console, Lua samples and code snippets,
+        debugging capabilities, etc.</p>
+    <p>The main goal of Comet is to provide an easy-to-use
+        development environment for the Lua programming language on Android, Linux and Windows. It integrates the Lua
+        scripting engine with all Lua functionalities. Within the Comet environment, you can develop algorithms for
+        science and engineering with one of the most elegant and fast scripting languages.</p>
+    <h2><a id="Install_15"></a>Install</h2>
+    <p>To install Comet just copy the portable binary
+        distribution from the Dist\OS directory to any location (such as usb key) and run comet (located in the bin
+        directory). The zipped binary distribution is also available to download here: <a
+            href="http://www.hamady.org">Comet</a>.</p>
+    <h2>Build</h2>
+    <p>I did some modifications on the wxWidgets library
+        (and Scintilla), and, to a lesser extent, to LuaJIT.<br />
+        All the modifications are marked with the [:COMET:] item and can then be easily traced in the code.<br />
+        The modifications in the LuaJIT code are very light and can be very quicky applied, if necessary, to a new
+        upgraded version.<br />
+        The modifications in wxWidgets are far more numerous and need more work when upgraded to wxWidgets 3.x.</p>
+    <h3>Directories</h3>
+    <ul>
+        <li>Dist: where the binary distributions are
+            located (For Windows and Linux, 32bit and 64bit)</li>
+        <li class="has-line-data" data-line-start="30" data-line-end="33">Main: Source code with:
+            <ul>
+                <li>the build directory</li>
+                <li>the C++ code</li>
+            </ul>
+        </li>
+        <li>Manual: documentation</li>
+        <li>output: where are located the binaries and intermediary object files</li>
+    </ul>
+    <h3>Build under Linux</h3>
+    <p>For now, I used a Debian 7 machine to build the
+        Comet release version.<br />
+        to build Comet: cd to Main/build/gnu and startbuild.sh</p>
+    <ul>
+        <li>the script will clean, start other build
+            scripts and make the release distribution.</li>
+        <li>to build only Comet, just type: build.shcomet</li>
+        <li>the build.sh was made for production.</li>
+        <li>for developement, it is necessay to keep
+            object and lib files and then comment out the clean step in the build.sh
+            scripts.</li>
+    </ul>
+    <h3>Build under Windows
+    </h3>
+    <p>I still use Visual C++ 2013.<br />
+        All the build process is handled by the batch file build.bat located in Main/build/win.<br />
+        build.bat need to be adapted and the the solutions (*.sln and *.vcxproj) need to be upgraded to the installed
+        Visual C++ release.<br />
+        I use the MSBuild command line tool to build solutions. I do not use directly Visual C++ IDE.</p>
+
+</body>
+
+</html>

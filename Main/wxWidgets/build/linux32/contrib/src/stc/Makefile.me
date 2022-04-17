@@ -1,0 +1,580 @@
+BITS := $(shell getconf LONG_BIT)
+ifeq "$(BITS)" "64"
+all:
+else
+    DEVC_OUTDIR = ../../../../../../../output/Linux32
+endif
+DEVC_BINDIR = $(DEVC_OUTDIR)/bin
+DEVC_LIBDIR = $(DEVC_OUTDIR)/lib
+DEVC_MAIN = ../../../../../../../Main
+
+prefix = /usr/local
+exec_prefix = ${prefix}
+datarootdir = @datarootdir@
+INSTALL = /usr/bin/install -c
+SHARED_LD_CXX = $(CXX) -shared -O2 -fPIC -o
+LIBEXT = .a
+LIBPREFIX = lib
+SO_SUFFIX = so
+DLLIMP_SUFFIX = so
+LN_S = ln -s
+WINDRES =
+PIC_FLAG = -fPIC -DPIC
+SONAME_FLAG = -Wl,-soname,
+STRIP = strip
+INSTALL_PROGRAM = ${INSTALL}
+INSTALL_DATA = ${INSTALL} -m 644
+INSTALL_DIR = $(INSTALL) -d
+BK_DEPS = $(DEVC_MAIN)/wxWidgets/build/linux32/bk-deps
+srcdir = ../../../../../contrib/src/stc
+top_srcdir = ../../../../..
+libdir = $(DEVC_OUTDIR)/lib/wx
+#libdir = ${exec_prefix}/lib
+includedir = ${prefix}/include
+DLLPREFIX = lib
+LIBS = -lz -ldl -lm
+AR = ar
+AROPTIONS = rcu
+RANLIB = ranlib
+CXX = g++
+CXXFLAGS = -DWX_PRECOMP -pthread -Wall -Wundef -Wno-ctor-dtor-privacy -O2 -fno-strict-aliasing
+CPPFLAGS = -D_FILE_OFFSET_BITS=64 -D_LARGE_FILES -I${wx_top_builddir}/lib/wx/include/gtk2-unicode-release-2.8 -I${top_srcdir}/include -pthread -I/usr/include/gtk-2.0 -I/usr/lib/i386-linux-gnu/gtk-2.0/include -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/pango-1.0 -I/usr/include/gio-unix-2.0/ -I/usr/include/glib-2.0 -I/usr/lib/i386-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12
+LDFLAGS = -pthread
+VENDOR = custom
+WX_FLAVOUR =
+WX_LIB_FLAVOUR =
+TOOLKIT = GTK
+TOOLKIT_LOWERCASE = gtk
+TOOLKIT_VERSION = 2
+TTOOLCHAIN_NAME =
+TOOLCHAIN_FULLNAME =
+EXTRALIBS = -pthread  -Wl,--version-script,$(wx_top_builddir)/version-script -lz -ldl -lm
+EXTRALIBS_GUI = -pthread -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lgdk_pixbuf-2.0 -lpango-1.0 -lfreetype -lfontconfig -lgobject-2.0 -lgthread-2.0 -lrt -lglib-2.0 -lpng -lz
+HOST_SUFFIX =
+wx_top_builddir = $(DEVC_MAIN)/wxWidgets/build/linux32
+
+### Variables: ###
+
+DESTDIR =
+WX_RELEASE = 2.8
+WX_RELEASE_NODOT = 28
+#LIBDIRNAME = $(wx_top_builddir)/lib
+LIBDIRNAME = $(DEVC_OUTDIR)/bin
+STCDLL_CXXFLAGS = -D__WX$(TOOLKIT)__ $(__WXUNIV_DEFINE_p) \
+	$(__EXCEPTIONS_DEFINE_p) $(__RTTI_DEFINE_p) $(__THREAD_DEFINE_p) \
+	-DWXBUILDING -I$(srcdir)/../../include -I$(srcdir)/scintilla/include \
+	-I$(srcdir)/scintilla/src -D__WX__ -DSCI_LEXER -DLINK_LEXERS -DWXUSINGDLL \
+	-DWXMAKINGDLL_STC $(PIC_FLAG) $(CPPFLAGS) $(CXXFLAGS)
+STCDLL_OBJECTS =  \
+	stcdll_PlatWX.o \
+	stcdll_ScintillaWX.o \
+	stcdll_stc.o \
+	stcdll_AutoComplete.o \
+	stcdll_CallTip.o \
+	stcdll_CellBuffer.o \
+	stcdll_CharClassify.o \
+	stcdll_ContractionState.o \
+	stcdll_Document.o \
+	stcdll_DocumentAccessor.o \
+	stcdll_Editor.o \
+	stcdll_ExternalLexer.o \
+	stcdll_Indicator.o \
+	stcdll_KeyMap.o \
+	stcdll_KeyWords.o \
+	stcdll_LexBash.o \
+	stcdll_LexCPP.o \
+	stcdll_LexFortran.o \
+	stcdll_LexLua.o \
+	stcdll_LexMatlab.o \
+	stcdll_LexPython.o \
+	stcdll_LexLaTeX.o \
+	stcdll_LexMake.o \
+	stcdll_LexComet.o \
+	stcdll_LexSolis.o \
+	stcdll_LexBatch.o \
+	stcdll_LineMarker.o \
+	stcdll_PropSet.o \
+	stcdll_RESearch.o \
+	stcdll_ScintillaBase.o \
+	stcdll_Style.o \
+	stcdll_StyleContext.o \
+	stcdll_UniConversion.o \
+	stcdll_ViewStyle.o \
+	stcdll_WindowAccessor.o \
+	stcdll_XPM.o \
+	$(__stcdll___win32rc)
+STCLIB_CXXFLAGS = -D__WX$(TOOLKIT)__ $(__WXUNIV_DEFINE_p) \
+	$(__EXCEPTIONS_DEFINE_p) $(__RTTI_DEFINE_p) $(__THREAD_DEFINE_p) \
+	-DWXBUILDING -I$(srcdir)/../../include -I$(srcdir)/scintilla/include \
+	-I$(srcdir)/scintilla/src -D__WX__ -DSCI_LEXER -DLINK_LEXERS $(CPPFLAGS) \
+	$(CXXFLAGS)
+STCLIB_OBJECTS =  \
+	stclib_PlatWX.o \
+	stclib_ScintillaWX.o \
+	stclib_stc.o \
+	stclib_AutoComplete.o \
+	stclib_CallTip.o \
+	stclib_CellBuffer.o \
+	stclib_CharClassify.o \
+	stclib_ContractionState.o \
+	stclib_Document.o \
+	stclib_DocumentAccessor.o \
+	stclib_Editor.o \
+	stclib_ExternalLexer.o \
+	stclib_Indicator.o \
+	stclib_KeyMap.o \
+	stclib_KeyWords.o \
+	stclib_LexBash.o \
+	stclib_LexCPP.o \
+	stclib_LexFortran.o \
+	stclib_LexLua.o \
+	stclib_LexMatlab.o \
+	stclib_LexPython.o \
+	stclib_LexLaTeX.o \
+	stclib_LexMake.o \
+	stclib_LexComet.o \
+	stclib_LexSolis.o \
+	stclib_LexBatch.o \
+	stclib_LineMarker.o \
+	stclib_PropSet.o \
+	stclib_RESearch.o \
+	stclib_ScintillaBase.o \
+	stclib_Style.o \
+	stclib_StyleContext.o \
+	stclib_UniConversion.o \
+	stclib_ViewStyle.o \
+	stclib_WindowAccessor.o \
+	stclib_XPM.o
+
+### Conditionally set variables: ###
+
+#CXXC = $(CXX)
+CXXC = $(BK_DEPS) $(CXX)
+#WXMACVERSION_CMD = \
+#	-compatibility_version 9.0 -current_version 9.0
+#PORTNAME = base
+PORTNAME = $(TOOLKIT_LOWERCASE)$(TOOLKIT_VERSION)
+#WXBASEPORT = _carbon
+#WXCOMPILER = _gcc
+#VENDORTAG = _$(VENDOR)
+#VENDORTAG =
+#WXDEBUGFLAG = d
+#WXDEBUGFLAG = d
+WXUNICODEFLAG = u
+#WXUNIVNAME = univ
+WXDLLNAMEPREFIXGUI = wx
+#WXDLLNAMEPREFIXGUI = \
+#	wx$(PORTNAME)$(WXUNIVNAME)$(WX_RELEASE_NODOT)
+WXDLLVERSIONTAG =
+#WXDLLVERSIONTAG =
+EXTRALIBS_FOR_BASE = $(EXTRALIBS)
+#EXTRALIBS_FOR_BASE = $(EXTRALIBS) $(EXTRALIBS_GUI)
+EXTRALIBS_FOR_GUI = $(EXTRALIBS_GUI)
+#EXTRALIBS_FOR_GUI =
+COND_SHARED_1___stcdll___depname = \
+	$(LIBDIRNAME)/$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)stc$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(__stcdll___targetsuf3)
+__stcdll___depname = $(COND_SHARED_1___stcdll___depname)
+#__WXUNIV_DEFINE_p_1 = --define __WXUNIVERSAL__
+#__EXCEPTIONS_DEFINE_p_1 = --define wxNO_EXCEPTIONS
+#__RTTI_DEFINE_p_1 = --define wxNO_RTTI
+#__THREAD_DEFINE_p_1 = --define wxNO_THREADS
+__install_stcdll___depname = install_stcdll
+__uninstall_stcdll___depname = uninstall_stcdll
+COND_PLATFORM_MACOSX_1___stcdll___macinstnamecmd = -install_name \
+	$(libdir)/$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)stc$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(__stcdll___targetsuf2)
+#__stcdll___macinstnamecmd = $(COND_PLATFORM_MACOSX_1___stcdll___macinstnamecmd)
+COND_PLATFORM_OS2_1___stcdll___importlib = -import \
+	$(LIBDIRNAME)/$(LIBPREFIX)wx_$(PORTNAME)$(WXUNIVNAME)stc-$(WX_RELEASE)$(HOST_SUFFIX).$(DLLIMP_SUFFIX)
+#__stcdll___importlib = $(COND_PLATFORM_OS2_1___stcdll___importlib)
+COND_WINDOWS_IMPLIB_1___stcdll___importlib = \
+	-Wl,--out-implib=$(LIBDIRNAME)/$(LIBPREFIX)wx_$(PORTNAME)$(WXUNIVNAME)stc-$(WX_RELEASE)$(HOST_SUFFIX).$(DLLIMP_SUFFIX)
+#__stcdll___importlib = $(COND_WINDOWS_IMPLIB_1___stcdll___importlib)
+#__stcdll___targetsuf2 \
+#	= .$(SO_SUFFIX).0
+#__stcdll___targetsuf2 \
+#	= .0.$(SO_SUFFIX)
+__stcdll___targetsuf2 = .$(SO_SUFFIX)
+#__stcdll___targetsuf3 \
+#	= \
+#	.$(SO_SUFFIX).0.8.0
+#__stcdll___targetsuf3 \
+#	= .0.8.0.$(SO_SUFFIX)
+#__stcdll___targetsuf3 \
+#	= .$(SO_SUFFIX).0
+#__stcdll___targetsuf3 \
+#	= -0.$(SO_SUFFIX)
+__stcdll___targetsuf3 = .$(SO_SUFFIX)
+COND_USE_SOVERLINUX_1___stcdll___soname_flags = \
+	$(SONAME_FLAG)$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)stc$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(__stcdll___targetsuf2)
+#__stcdll___soname_flags = $(COND_USE_SOVERLINUX_1___stcdll___soname_flags)
+COND_USE_SOVERSOLARIS_1___stcdll___soname_flags = \
+	$(SONAME_FLAG)$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)stc$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(__stcdll___targetsuf3)
+#__stcdll___soname_flags = $(COND_USE_SOVERSOLARIS_1___stcdll___soname_flags)
+COND_USE_SOTWOSYMLINKS_1___stcdll___so_symlinks_cmd = (cd $(LIBDIRNAME)/; rm -f \
+	$(LIBPREFIX)wx_$(PORTNAME)$(WXUNIVNAME)stc-$(WX_RELEASE)$(HOST_SUFFIX).$(DLLIMP_SUFFIX) \
+	$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)stc$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(__stcdll___targetsuf2); \
+	$(LN_S) \
+	$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)stc$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(__stcdll___targetsuf3) \
+	$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)stc$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(__stcdll___targetsuf2); \
+	$(LN_S) \
+	$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)stc$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(__stcdll___targetsuf2) \
+	$(LIBPREFIX)wx_$(PORTNAME)$(WXUNIVNAME)stc-$(WX_RELEASE)$(HOST_SUFFIX).$(DLLIMP_SUFFIX))
+#__stcdll___so_symlinks_cmd = $(COND_USE_SOTWOSYMLINKS_1___stcdll___so_symlinks_cmd)
+COND_USE_SOVERSOLARIS_1___stcdll___so_symlinks_cmd = (cd $(LIBDIRNAME)/; rm -f \
+	$(LIBPREFIX)wx_$(PORTNAME)$(WXUNIVNAME)stc-$(WX_RELEASE)$(HOST_SUFFIX).$(DLLIMP_SUFFIX); \
+	$(LN_S) \
+	$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)stc$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(__stcdll___targetsuf3) \
+	$(LIBPREFIX)wx_$(PORTNAME)$(WXUNIVNAME)stc-$(WX_RELEASE)$(HOST_SUFFIX).$(DLLIMP_SUFFIX))
+#__stcdll___so_symlinks_cmd = $(COND_USE_SOVERSOLARIS_1___stcdll___so_symlinks_cmd)
+COND_USE_SOTWOSYMLINKS_1___stcdll___so_symlinks_inst_cmd = rm -f \
+	$(LIBPREFIX)wx_$(PORTNAME)$(WXUNIVNAME)stc-$(WX_RELEASE)$(HOST_SUFFIX).$(DLLIMP_SUFFIX) \
+	$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)stc$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(__stcdll___targetsuf2); \
+	$(LN_S) \
+	$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)stc$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(__stcdll___targetsuf3) \
+	$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)stc$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(__stcdll___targetsuf2); \
+	$(LN_S) \
+	$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)stc$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(__stcdll___targetsuf2) \
+	$(LIBPREFIX)wx_$(PORTNAME)$(WXUNIVNAME)stc-$(WX_RELEASE)$(HOST_SUFFIX).$(DLLIMP_SUFFIX)
+#__stcdll___so_symlinks_inst_cmd = $(COND_USE_SOTWOSYMLINKS_1___stcdll___so_symlinks_inst_cmd)
+COND_USE_SOVERSOLARIS_1___stcdll___so_symlinks_inst_cmd = rm -f \
+	$(LIBPREFIX)wx_$(PORTNAME)$(WXUNIVNAME)stc-$(WX_RELEASE)$(HOST_SUFFIX).$(DLLIMP_SUFFIX); \
+	$(LN_S) \
+	$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)stc$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(__stcdll___targetsuf3) \
+	$(LIBPREFIX)wx_$(PORTNAME)$(WXUNIVNAME)stc-$(WX_RELEASE)$(HOST_SUFFIX).$(DLLIMP_SUFFIX);
+#__stcdll___so_symlinks_inst_cmd = $(COND_USE_SOVERSOLARIS_1___stcdll___so_symlinks_inst_cmd)
+COND_USE_SOTWOSYMLINKS_1___stcdll___so_symlinks_uninst_cmd = rm -f \
+	$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)stc$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(__stcdll___targetsuf2) \
+	$(LIBPREFIX)wx_$(PORTNAME)$(WXUNIVNAME)stc-$(WX_RELEASE)$(HOST_SUFFIX).$(DLLIMP_SUFFIX)
+#__stcdll___so_symlinks_uninst_cmd = $(COND_USE_SOTWOSYMLINKS_1___stcdll___so_symlinks_uninst_cmd)
+COND_USE_SOVERSOLARIS_1___stcdll___so_symlinks_uninst_cmd = rm -f \
+	$(LIBPREFIX)wx_$(PORTNAME)$(WXUNIVNAME)stc-$(WX_RELEASE)$(HOST_SUFFIX).$(DLLIMP_SUFFIX)
+#__stcdll___so_symlinks_uninst_cmd = $(COND_USE_SOVERSOLARIS_1___stcdll___so_symlinks_uninst_cmd)
+#__RCDEFDIR_p = --include-dir \
+#	$(LIBDIRNAME)/wx/include/$(TOOLCHAIN_FULLNAME)
+COND_MONOLITHIC_1___WXLIB_MONO_p = \
+	-lwx
+#__WXLIB_MONO_p = $(COND_MONOLITHIC_1___WXLIB_MONO_p)
+__LIB_TIFF_p \
+	= \
+	-lwxtiff
+__LIB_JPEG_p \
+	= \
+	-lwxjpeg
+#__LIB_PNG_p \
+#	= \
+#	-lwxpng$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)-$(WX_RELEASE)$(HOST_SUFFIX)
+#__LIB_ZLIB_p = \
+#	-lwxzlib$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)-$(WX_RELEASE)$(HOST_SUFFIX)
+#__LIB_ODBC_p = \
+#	-lwxodbc$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)-$(WX_RELEASE)$(HOST_SUFFIX)
+COND_wxUSE_REGEX_builtin___LIB_REGEX_p = \
+	-lwxregex
+__LIB_REGEX_p = $(COND_wxUSE_REGEX_builtin___LIB_REGEX_p)
+#__LIB_EXPAT_p = \
+#	-lwxexpat$(WXDEBUGFLAG)$(WX_LIB_FLAVOUR)-$(WX_RELEASE)$(HOST_SUFFIX)
+#__stcdll___win32rc = stcdll_version_rc.o
+COND_MONOLITHIC_0___WXLIB_CORE_p = \
+	-lwxcore
+__WXLIB_CORE_p = $(COND_MONOLITHIC_0___WXLIB_CORE_p)
+COND_MONOLITHIC_0___WXLIB_BASE_p = \
+	-lwxbase
+__WXLIB_BASE_p = $(COND_MONOLITHIC_0___WXLIB_BASE_p)
+COND_SHARED_0___stclib___depname = \
+	$(LIBDIRNAME)/$(LIBPREFIX)wxstc$(LIBEXT)
+#__stclib___depname = $(COND_SHARED_0___stclib___depname)
+#__install_stclib___depname = install_stclib
+#__uninstall_stclib___depname = uninstall_stclib
+#__WXUNIV_DEFINE_p = -D__WXUNIVERSAL__
+#__EXCEPTIONS_DEFINE_p = -DwxNO_EXCEPTIONS
+#__RTTI_DEFINE_p = -DwxNO_RTTI
+#__THREAD_DEFINE_p = -DwxNO_THREADS
+
+### Targets: ###
+
+all: $(__stcdll___depname) $(__stclib___depname)
+
+install: $(__install_stcdll___depname) $(__install_stclib___depname)
+	$(INSTALL_DIR) $(DESTDIR)$(includedir)/wx-$(WX_RELEASE)$(WX_FLAVOUR)
+	for f in wx/stc/stc.h; do \
+	if test ! -d $(DESTDIR)$(includedir)/wx-$(WX_RELEASE)$(WX_FLAVOUR)/`dirname $$f` ; then \
+	$(INSTALL_DIR) $(DESTDIR)$(includedir)/wx-$(WX_RELEASE)$(WX_FLAVOUR)/`dirname $$f`; \
+	fi; \
+	$(INSTALL_DATA) $(srcdir)/../../include/$$f $(DESTDIR)$(includedir)/wx-$(WX_RELEASE)$(WX_FLAVOUR)/$$f; \
+	done
+
+uninstall: $(__uninstall_stcdll___depname) $(__uninstall_stclib___depname)
+	for f in wx/stc/stc.h; do \
+	rm -f $(DESTDIR)$(includedir)/wx-$(WX_RELEASE)$(WX_FLAVOUR)/$$f; \
+	done
+
+install-strip: install
+	$(STRIP) $(DESTDIR)$(libdir)/$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)stc$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(__stcdll___targetsuf3)
+
+cleanobj:
+	rm -rf ./.deps ./.pch
+	rm -f ./*.o
+
+clean:
+	rm -rf ./.deps ./.pch
+	rm -f ./*.o
+	rm -f $(LIBDIRNAME)/$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)stc$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(__stcdll___targetsuf3)
+	rm -f $(LIBDIRNAME)/$(LIBPREFIX)wx_$(PORTNAME)$(WXUNIVNAME)stc-$(WX_RELEASE)$(HOST_SUFFIX).$(DLLIMP_SUFFIX)
+	rm -f $(LIBDIRNAME)/$(LIBPREFIX)wx_$(PORTNAME)$(WXUNIVNAME)stc-$(WX_RELEASE)$(HOST_SUFFIX).$(DLLIMP_SUFFIX) $(LIBDIRNAME)/$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)stc$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(__stcdll___targetsuf2)
+	rm -f $(LIBDIRNAME)/$(LIBPREFIX)wxstc$(LIBEXT)
+
+distclean: clean
+	rm -f config.cache config.log config.status bk-deps bk-make-pch shared-ld-sh Makefile
+
+$(LIBDIRNAME)/$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)stc$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(__stcdll___targetsuf3): $(STCDLL_OBJECTS) $(__stcdll___win32rc)
+	$(SHARED_LD_CXX) $@ $(STCDLL_OBJECTS)    -L$(LIBDIRNAME) $(__stcdll___macinstnamecmd) $(__stcdll___importlib) $(__stcdll___soname_flags) $(WXMACVERSION_CMD) $(LDFLAGS)  $(__WXLIB_MONO_p) $(__LIB_TIFF_p) $(__LIB_JPEG_p) $(__LIB_PNG_p) $(EXTRALIBS_FOR_GUI) $(__LIB_ZLIB_p) $(__LIB_ODBC_p) $(__LIB_REGEX_p) $(__LIB_EXPAT_p) $(EXTRALIBS_FOR_BASE) $(__WXLIB_CORE_p)  $(__WXLIB_BASE_p)  $(LIBS)
+
+	$(__stcdll___so_symlinks_cmd)
+
+install_stcdll: $(__stcdll___depname)
+	$(INSTALL_DIR) $(DESTDIR)$(libdir)
+	$(INSTALL_DATA) $(LIBDIRNAME)/$(LIBPREFIX)wx_$(PORTNAME)$(WXUNIVNAME)stc-$(WX_RELEASE)$(HOST_SUFFIX).$(DLLIMP_SUFFIX) $(DESTDIR)$(libdir)
+	$(INSTALL_PROGRAM) $(LIBDIRNAME)/$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)stc$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(__stcdll___targetsuf3) $(DESTDIR)$(libdir)
+	(cd $(DESTDIR)$(libdir) ; $(__stcdll___so_symlinks_inst_cmd))
+
+uninstall_stcdll:
+	rm -f $(DESTDIR)$(libdir)/$(LIBPREFIX)wx_$(PORTNAME)$(WXUNIVNAME)stc-$(WX_RELEASE)$(HOST_SUFFIX).$(DLLIMP_SUFFIX)
+	rm -f $(DESTDIR)$(libdir)/$(DLLPREFIX)$(WXDLLNAMEPREFIXGUI)stc$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG)$(__stcdll___targetsuf3)
+	(cd $(DESTDIR)$(libdir) ; $(__stcdll___so_symlinks_uninst_cmd))
+
+#$(LIBDIRNAME)/$(LIBPREFIX)wxstc$(LIBEXT): $(STCLIB_OBJECTS)
+#	rm -f $@
+#	$(AR) $(AROPTIONS) $@ $(STCLIB_OBJECTS)
+#	$(RANLIB) $@
+
+#install_stclib: $(__stclib___depname)
+#	$(INSTALL_DIR) $(DESTDIR)$(libdir)
+#	$(INSTALL_DATA) $(LIBDIRNAME)/$(LIBPREFIX)wxstc$(LIBEXT) $(DESTDIR)$(libdir)
+
+#uninstall_stclib:
+#	rm -f $(DESTDIR)$(libdir)/$(LIBPREFIX)wxstc$(LIBEXT)
+
+stcdll_PlatWX.o: $(srcdir)/PlatWX.cpp
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/PlatWX.cpp
+
+stcdll_ScintillaWX.o: $(srcdir)/ScintillaWX.cpp
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/ScintillaWX.cpp
+
+stcdll_stc.o: $(srcdir)/stc.cpp
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/stc.cpp
+
+stcdll_AutoComplete.o: $(srcdir)/scintilla/src/AutoComplete.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/AutoComplete.cxx
+
+stcdll_CallTip.o: $(srcdir)/scintilla/src/CallTip.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/CallTip.cxx
+
+stcdll_CellBuffer.o: $(srcdir)/scintilla/src/CellBuffer.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/CellBuffer.cxx
+
+stcdll_CharClassify.o: $(srcdir)/scintilla/src/CharClassify.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/CharClassify.cxx
+
+stcdll_ContractionState.o: $(srcdir)/scintilla/src/ContractionState.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/ContractionState.cxx
+
+stcdll_Document.o: $(srcdir)/scintilla/src/Document.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/Document.cxx
+
+stcdll_DocumentAccessor.o: $(srcdir)/scintilla/src/DocumentAccessor.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/DocumentAccessor.cxx
+
+stcdll_Editor.o: $(srcdir)/scintilla/src/Editor.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/Editor.cxx
+
+stcdll_ExternalLexer.o: $(srcdir)/scintilla/src/ExternalLexer.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/ExternalLexer.cxx
+
+stcdll_Indicator.o: $(srcdir)/scintilla/src/Indicator.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/Indicator.cxx
+
+stcdll_KeyMap.o: $(srcdir)/scintilla/src/KeyMap.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/KeyMap.cxx
+
+stcdll_KeyWords.o: $(srcdir)/scintilla/src/KeyWords.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/KeyWords.cxx
+
+stcdll_LexBash.o: $(srcdir)/scintilla/src/LexBash.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/LexBash.cxx
+
+stcdll_LexCPP.o: $(srcdir)/scintilla/src/LexCPP.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/LexCPP.cxx
+
+stcdll_LexFortran.o: $(srcdir)/scintilla/src/LexFortran.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/LexFortran.cxx
+
+stcdll_LexLua.o: $(srcdir)/scintilla/src/LexLua.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/LexLua.cxx
+
+stcdll_LexMatlab.o: $(srcdir)/scintilla/src/LexMatlab.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/LexMatlab.cxx
+
+stcdll_LexPython.o: $(srcdir)/scintilla/src/LexPython.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/LexPython.cxx
+
+stcdll_LexLaTeX.o: $(srcdir)/scintilla/src/LexLaTeX.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/LexLaTeX.cxx
+
+stcdll_LexMake.o: $(srcdir)/scintilla/src/LexMake.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/LexMake.cxx
+
+stcdll_LexComet.o: $(srcdir)/scintilla/src/LexComet.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/LexComet.cxx
+
+stcdll_LexSolis.o: $(srcdir)/scintilla/src/LexSolis.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/LexSolis.cxx
+
+stcdll_LexBatch.o: $(srcdir)/scintilla/src/LexBatch.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/LexBatch.cxx
+
+stcdll_LineMarker.o: $(srcdir)/scintilla/src/LineMarker.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/LineMarker.cxx
+
+stcdll_PropSet.o: $(srcdir)/scintilla/src/PropSet.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/PropSet.cxx
+
+stcdll_RESearch.o: $(srcdir)/scintilla/src/RESearch.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/RESearch.cxx
+
+stcdll_ScintillaBase.o: $(srcdir)/scintilla/src/ScintillaBase.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/ScintillaBase.cxx
+
+stcdll_Style.o: $(srcdir)/scintilla/src/Style.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/Style.cxx
+
+stcdll_StyleContext.o: $(srcdir)/scintilla/src/StyleContext.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/StyleContext.cxx
+
+stcdll_UniConversion.o: $(srcdir)/scintilla/src/UniConversion.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/UniConversion.cxx
+
+stcdll_ViewStyle.o: $(srcdir)/scintilla/src/ViewStyle.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/ViewStyle.cxx
+
+stcdll_WindowAccessor.o: $(srcdir)/scintilla/src/WindowAccessor.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/WindowAccessor.cxx
+
+stcdll_XPM.o: $(srcdir)/scintilla/src/XPM.cxx
+	$(CXXC) -c -o $@ $(STCDLL_CXXFLAGS) $(srcdir)/scintilla/src/XPM.cxx
+
+stcdll_version_rc.o: $(srcdir)/../../../src/msw/version.rc
+	$(WINDRES) -i$< -o$@    --define __WX$(TOOLKIT)__ $(__WXUNIV_DEFINE_p_1)   $(__EXCEPTIONS_DEFINE_p_1) $(__RTTI_DEFINE_p_1) $(__THREAD_DEFINE_p_1)   --define WXBUILDING --define WXDLLNAME=$(WXDLLNAMEPREFIXGUI)stc$(WXCOMPILER)$(VENDORTAG)$(WXDLLVERSIONTAG) $(__RCDEFDIR_p) --include-dir $(top_srcdir)/include --include-dir $(srcdir)/../../include --include-dir $(srcdir)/scintilla/include --include-dir $(srcdir)/scintilla/src --define __WX__ --define SCI_LEXER --define LINK_LEXERS --define WXUSINGDLL --define WXMAKINGDLL_STC
+
+stclib_PlatWX.o: $(srcdir)/PlatWX.cpp
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/PlatWX.cpp
+
+stclib_ScintillaWX.o: $(srcdir)/ScintillaWX.cpp
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/ScintillaWX.cpp
+
+stclib_stc.o: $(srcdir)/stc.cpp
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/stc.cpp
+
+stclib_AutoComplete.o: $(srcdir)/scintilla/src/AutoComplete.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/AutoComplete.cxx
+
+stclib_CallTip.o: $(srcdir)/scintilla/src/CallTip.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/CallTip.cxx
+
+stclib_CellBuffer.o: $(srcdir)/scintilla/src/CellBuffer.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/CellBuffer.cxx
+
+stclib_CharClassify.o: $(srcdir)/scintilla/src/CharClassify.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/CharClassify.cxx
+
+stclib_ContractionState.o: $(srcdir)/scintilla/src/ContractionState.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/ContractionState.cxx
+
+stclib_Document.o: $(srcdir)/scintilla/src/Document.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/Document.cxx
+
+stclib_DocumentAccessor.o: $(srcdir)/scintilla/src/DocumentAccessor.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/DocumentAccessor.cxx
+
+stclib_Editor.o: $(srcdir)/scintilla/src/Editor.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/Editor.cxx
+
+stclib_ExternalLexer.o: $(srcdir)/scintilla/src/ExternalLexer.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/ExternalLexer.cxx
+
+stclib_Indicator.o: $(srcdir)/scintilla/src/Indicator.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/Indicator.cxx
+
+stclib_KeyMap.o: $(srcdir)/scintilla/src/KeyMap.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/KeyMap.cxx
+
+stclib_KeyWords.o: $(srcdir)/scintilla/src/KeyWords.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/KeyWords.cxx
+
+stclib_LexBash.o: $(srcdir)/scintilla/src/LexBash.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/LexBash.cxx
+
+stclib_LexCPP.o: $(srcdir)/scintilla/src/LexCPP.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/LexCPP.cxx
+
+stclib_LexFortran.o: $(srcdir)/scintilla/src/LexFortran.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/LexFortran.cxx
+
+sstclib_LexLua.o: $(srcdir)/scintilla/src/LexLua.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/LexLua.cxx
+
+stclib_LexMatlab.o: $(srcdir)/scintilla/src/LexMatlab.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/LexMatlab.cxx
+
+stclib_LexPython.o: $(srcdir)/scintilla/src/LexPython.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/LexPython.cxx
+
+stclib_LexLaTeX.o: $(srcdir)/scintilla/src/LexLaTeX.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/LexLaTeX.cxx
+
+stclib_LexMake.o: $(srcdir)/scintilla/src/LexMake.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/LexMake.cxx
+
+stclib_LexComet.o: $(srcdir)/scintilla/src/LexComet.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/LexComet.cxx
+
+stclib_LexSolis.o: $(srcdir)/scintilla/src/LexSolis.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/LexSolis.cxx
+
+stclib_LexBatch.o: $(srcdir)/scintilla/src/LexBatch.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/LexBatch.cxx
+
+stclib_LineMarker.o: $(srcdir)/scintilla/src/LineMarker.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/LineMarker.cxx
+
+stclib_PropSet.o: $(srcdir)/scintilla/src/PropSet.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/PropSet.cxx
+
+stclib_RESearch.o: $(srcdir)/scintilla/src/RESearch.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/RESearch.cxx
+
+stclib_ScintillaBase.o: $(srcdir)/scintilla/src/ScintillaBase.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/ScintillaBase.cxx
+
+stclib_Style.o: $(srcdir)/scintilla/src/Style.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/Style.cxx
+
+stclib_StyleContext.o: $(srcdir)/scintilla/src/StyleContext.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/StyleContext.cxx
+
+stclib_UniConversion.o: $(srcdir)/scintilla/src/UniConversion.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/UniConversion.cxx
+
+stclib_ViewStyle.o: $(srcdir)/scintilla/src/ViewStyle.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/ViewStyle.cxx
+
+stclib_WindowAccessor.o: $(srcdir)/scintilla/src/WindowAccessor.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/WindowAccessor.cxx
+
+stclib_XPM.o: $(srcdir)/scintilla/src/XPM.cxx
+	$(CXXC) -c -o $@ $(STCLIB_CXXFLAGS) $(srcdir)/scintilla/src/XPM.cxx
+
+
+# Include dependency info, if present:
+-include ./.deps/*.d
+
+.PHONY: all install uninstall cleanobj clean distclean install_stcdll uninstall_stcdll \
+	install_stclib uninstall_stclib

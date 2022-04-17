@@ -1,0 +1,29 @@
+Comet
+Programming Environment for Lua
+Free of charge only for non-commercial use
+
+Copyright(C) 2010-2022 Pr. Sidi HAMADY
+All right reserved.
+http://www.hamady.org
+sidi@hamady.org
+
+------------------------------------------------------------------------
+Under Ubuntu/Debian 64bit, if you encounter error such as:
+./comet: error while loading shared libraries: libpng12.so.0
+Install libpng12 as follows:
+wget https://sourceforge.net/projects/libpng/files/libpng12/1.2.59/libpng-1.2.59.tar.gz
+gunzip libpng-1.2.59.tar.gz
+tar xf libpng-1.2.59.tar
+cd libpng-1.2.59
+./configure --prefix=/usr/local
+make
+sudo make install
+cp /usr/local/lib/libpng12.so.0 /where/comet/is/installed/bin/
+------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+If you encounter (in Ubuntu/Debian 64bit) error such as:
+Failed to load module "canberra-gtk-module"
+Install libcanberra-gtk-module as follows:
+sudo apt install libcanberra-gtk-module libcanberra-gtk3-module
+------------------------------------------------------------------------

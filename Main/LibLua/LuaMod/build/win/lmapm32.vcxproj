@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release DLL|Win32">
+      <Configuration>Release DLL</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="../../lmapm/src/lmapm.c" />
+    <ClCompile Include="../../lmapm/src/mapm5sin.c" />
+    <ClCompile Include="../../lmapm/src/mapmasin.c" />
+    <ClCompile Include="../../lmapm/src/mapmasn0.c" />
+    <ClCompile Include="../../lmapm/src/mapmcbrt.c" />
+    <ClCompile Include="../../lmapm/src/mapmcnst.c" />
+    <ClCompile Include="../../lmapm/src/mapmfact.c" />
+    <ClCompile Include="../../lmapm/src/mapmfmul.c" />
+    <ClCompile Include="../../lmapm/src/mapmgues.c" />
+    <ClCompile Include="../../lmapm/src/mapmhasn.c" />
+    <ClCompile Include="../../lmapm/src/mapmhsin.c" />
+    <ClCompile Include="../../lmapm/src/mapmipwr.c" />
+    <ClCompile Include="../../lmapm/src/mapmistr.c" />
+    <ClCompile Include="../../lmapm/src/mapmpwr2.c" />
+    <ClCompile Include="../../lmapm/src/mapmrsin.c" />
+    <ClCompile Include="../../lmapm/src/mapmsqrt.c" />
+    <ClCompile Include="../../lmapm/src/mapmstck.c" />
+    <ClCompile Include="../../lmapm/src/mapmutil.c" />
+    <ClCompile Include="../../lmapm/src/mapmutl1.c" />
+    <ClCompile Include="../../lmapm/src/mapmutl2.c" />
+    <ClCompile Include="../../lmapm/src/mapm_add.c" />
+    <ClCompile Include="../../lmapm/src/mapm_cpi.c" />
+    <ClCompile Include="../../lmapm/src/mapm_div.c" />
+    <ClCompile Include="../../lmapm/src/mapm_exp.c" />
+    <ClCompile Include="../../lmapm/src/mapm_fam.c" />
+    <ClCompile Include="../../lmapm/src/mapm_fft.c" />
+    <ClCompile Include="../../lmapm/src/mapm_flr.c" />
+    <ClCompile Include="../../lmapm/src/mapm_fpf.c" />
+    <ClCompile Include="../../lmapm/src/mapm_gcd.c" />
+    <ClCompile Include="../../lmapm/src/mapm_lg2.c" />
+    <ClCompile Include="../../lmapm/src/mapm_lg3.c" />
+    <ClCompile Include="../../lmapm/src/mapm_lg4.c" />
+    <ClCompile Include="../../lmapm/src/mapm_log.c" />
+    <ClCompile Include="../../lmapm/src/mapm_mul.c" />
+    <ClCompile Include="../../lmapm/src/mapm_pow.c" />
+    <ClCompile Include="../../lmapm/src/mapm_rcp.c" />
+    <ClCompile Include="../../lmapm/src/mapm_rnd.c" />
+    <ClCompile Include="../../lmapm/src/mapm_set.c" />
+    <ClCompile Include="../../lmapm/src/mapm_sin.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="../../lmapm/include/lmapm.h" />
+    <ClInclude Include="../../lmapm/include/m_apm.h" />
+    <ClInclude Include="../../lmapm/include/m_apm_lc.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="lmapm32.rc" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{879EF6FB-0F8F-4637-A4E5-D04F51795557}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>lmapm32</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'">../../../../../output/Windows32/bin/</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'">../../../../../output/Windows32/obj/lmapm/</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'">lmapm</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'">.dll</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'">
+    <ClCompile>
+      <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>..\..\lmapm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsC</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>Full</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;LUA_BUILD_AS_DLL;LUA_COMPAT_MODULE;USE_LUAJIT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>Release</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>
+      </ProgramDataBaseFileName>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>false</OmitFramePointers>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\lmapm\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <OutputFile>../../../../../output/Windows32/lib/$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+    <Link>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+      <ProgramDatabaseFile>
+      </ProgramDatabaseFile>
+      <ProfileGuidedDatabase>$(IntDir)$(TargetName).pgd</ProfileGuidedDatabase>
+      <ImportLibrary>$(OutDir)../lib/$(TargetName).lib</ImportLibrary>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>luacore.lib;luaext.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir)../lib</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

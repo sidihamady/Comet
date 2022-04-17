@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{98767377-866D-4b05-887B-625FBE53E555}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{87943777-C665-4376-A766-2A32D555A2CF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="../../lmapm/src/lmapm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapm_add.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapm_cpi.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapm_div.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapm_exp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapm_fam.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapm_fft.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapm_flr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapm_fpf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapm_gcd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapm_lg2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapm_lg3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapm_lg4.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapm_log.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapm_mul.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapm_pow.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapm_rcp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapm_rnd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapm_set.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapm_sin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapm5sin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapmasin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapmasn0.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapmcbrt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapmcnst.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapmfact.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapmfmul.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapmgues.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapmhasn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapmhsin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapmipwr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapmistr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapmpwr2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapmrsin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapmsqrt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapmstck.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapmutil.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapmutl1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lmapm/src/mapmutl2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="../../lmapm/include/lmapm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="../../lmapm/include/m_apm_lc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="../../lmapm/include/m_apm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="lmapm32.rc" />
+  </ItemGroup>
+</Project>

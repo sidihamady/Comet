@@ -1,0 +1,19 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 12.0.30110.0
+
+Project("{8BC44EB8-8B4A-11D0-8D11-00A0C91BC942}") = "stc64", "stc64.vcxproj", "{77889DF1-3433-4388-B152-ED6B6BE0207E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release DLL|x64 = Release DLL|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77889DF1-3433-4388-B152-ED6B6BE0207E}.Release DLL|x64.ActiveCfg = Release DLL|x64
+		{77889DF1-3433-4388-B152-ED6B6BE0207E}.Release DLL|x64.Build.0 = Release DLL|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

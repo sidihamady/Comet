@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{39877377-866D-4b04-887B-625FBE53EBCB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{39873777-C665-4376-A766-2A32D753A2CF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="../../lpeg/src/lptree.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lpeg/src/lpcap.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lpeg/src/lpcode.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lpeg/src/lpprint.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../../lpeg/src/lpvm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="../../lpeg/include/lptree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="../../lpeg/include/lpcap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="../../lpeg/include/lpcode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="../../lpeg/include/lpprint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="../../lpeg/include/lptypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="../../lpeg/include/lpvm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="../../lpeg/include/lpdef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="lpeg64.rc" />
+  </ItemGroup>
+</Project>

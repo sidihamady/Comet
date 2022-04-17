@@ -1,0 +1,52 @@
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "windows.h"
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+
+ FILEVERSION 2,8,12,0
+ PRODUCTVERSION 2,8,12,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x0L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040c04b0"
+        BEGIN
+            VALUE "Comments", "wxWidgets cross-platform GUI framework"
+            VALUE "CompanyName", "wxWidgets development team"
+            VALUE "FileDescription", "wxWidgets for MSW"
+            VALUE "FileVersion", "wxWidgets Library 2.8.12"
+            VALUE "InternalName", "wxMSW"
+            VALUE "LegalCopyright", "Copyright 1993-2010 wxWidgets development team"
+            VALUE "LegalTrademarks", "wxWidgets"
+            VALUE "OriginalFilename", "wxWidgets"
+            VALUE "PrivateBuild", "2.8.12"
+            VALUE "ProductName", "wxWidgets"
+            VALUE "ProductVersion", "2.8.12"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x40c, 1200
+    END
+END
+
+

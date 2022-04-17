@@ -1,0 +1,99 @@
+/*
+file: Makefile
+
+change filename to libluacore.so
+
+*/
+
+/*
+file: src/Makefile
+
+change filename to libluacore.so
+and put the following options:
+
+# [:COMET:]:20150104:
+XCFLAGS+= -DLUAJIT_UNWIND_EXTERNAL
+XCFLAGS+= -DLUAJIT_ENABLE_LUA52COMPAT
+#
+
+*/
+
+
+/*
+file: lj_err.c
+function: LJ_NOINLINE void LJ_FASTCALL lj_err_throw(lua_State *L, int errcode)
+
+*/
+
+/*
+file: lib_package.c
+function: static int lj_cf_package_require(lua_State *L)
+
+// >> [:COMET:]:20190310:
+  char szModuleName[256];
+  szModuleName[0] = szModuleName[255] = 0;
+  strncpy(szModuleName, name, 255);
+  char *pszM = (char *) strstr((char *) szModuleName, ".lua");
+  if (NULL == pszM) {
+      pszM = strstr((const char *) szModuleName, ".luac");
+  }
+  if (NULL == pszM) {
+      pszM = strstr((const char *) szModuleName, ".dll");
+  }
+  if (NULL == pszM) {
+      pszM = strstr((const char *) szModuleName, ".so");
+  }
+  if (NULL != pszM) {
+      *pszM = '\0';
+  }
+
+  and replace name by szModuleName in this function.
+
+*/
+
+
+/*
+file: lj_load.c
+// >> [:COMET:]:20190310: add istrip
+LUA_API int (lua_dump)(lua_State *L, lua_Writer writer, void *data, int istrip);
+
+*/
+
+
+
+/*
+file: msvcbuild.bat
+
+CHANGE:
+
+rem >> [:COMET:]:150604
+@set LJDLLNAME=luacore.dll
+@set LJLIBNAME=luacore.lib
+rem <<
+
+*/
+
+
+
+/*
+file: Makefile
+
+CHANGE:
+
+# >> [:COMET:]:150604
+INSTALL_TNAME= luajit-$(VERSION)
+INSTALL_TSYMNAME= luajit
+INSTALL_ANAME= libluacore.a
+INSTALL_SONAME= libluacore.so
+INSTALL_SOSHORT= libluacore.so
+INSTALL_DYLIBNAME= libluacore.dylib
+INSTALL_DYLIBSHORT1= libluacore.dylib
+INSTALL_DYLIBSHORT2= libluacore.dylib
+INSTALL_PCNAME= libluacore.pc
+# <<
+
+REMOVE:
+
+install: and uninstall: sections
+
+*/
