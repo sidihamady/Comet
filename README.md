@@ -46,6 +46,6 @@ to build Comet: cd to Main/build/gnu and start build.sh
 
 I still use Visual C++ 2013.
 All the build process is handled by the batch file build.bat located in Main/build/win.  
-build.bat need to be adapted and the the solutions (*.sln and *.vcxproj) need to be upgraded to the installed Visual C++ release.  
+build.bat need to be adapted and the solutions (*.sln and *.vcxproj) need to be upgraded to the installed Visual C++ release.  
 I use the MSBuild command line tool to build solutions. I do not use directly Visual C++ IDE.
 
